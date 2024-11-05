@@ -1,0 +1,26 @@
+@startuml  
+
+left to right direction
+
+actor "User" as U
+actor "Admin" as A
+
+rectangle "Website" as W {
+    rectangle "Product Submission" as PS
+    rectangle "Product Listings" as PL
+    rectangle "Messaging System" as MS
+}
+
+database "Product Database" as DB
+
+U --> PS : Submit Product Details
+PS --> DB : Store Product Data
+A --> DB : Fetch Product Submissions
+A --> PS : Review and Approve/Reject Product
+A --> DB : Update Product Status
+PS --> PL : Send Approved Products to Listings
+PL --> U : Display Product Listings
+U --> MS : Contact Seller via Messaging
+MS --> A : Notify Admin of Messages
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml   
+
+actor User
+actor Admin
+
+User -> Website : Register & Login
+User -> Website : Submit Product Details
+Website -> Admin : Notify Admin of Submission
+Admin -> Website : Review Product Details
+Admin -> Website : Approve or Reject Product
+Website -> Admin : Confirm Approval
+Website -> User : Notify User of Approval
+User -> Website : Search & Filter Products
+User -> Website : View Product Listings
+User -> Website : Communicate with Sellers
+
+@enduml
