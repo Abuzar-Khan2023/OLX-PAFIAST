@@ -1,0 +1,24 @@
+@startuml  
+
+title OLX Pak-Austria System Architecture
+
+rectangle "User Interface Layer" {
+    class "User Browser" as UserBrowser #lightblue
+    class "Frontend (HTML/CSS/JavaScript)" as Frontend #lightblue
+    UserBrowser -down-> Frontend : Access
+}
+
+rectangle "Application Layer" {
+    class "Backend Server (Node.js)" as Backend #lightgreen
+    class "Admin Panel (Web Interface)" as AdminPanel #lightgreen
+    Frontend -down-> Backend : Communicates
+    AdminPanel -down-> Backend : Admin Access
+}
+
+rectangle "Database Layer" {
+    class "Database (MySQL)" as Database #lightyellow
+    Backend -down-> Database : Reads/Writes Data
+    AdminPanel -down-> Database : Reads/Writes Data
+}
+
+@enduml

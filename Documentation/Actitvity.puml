@@ -1,0 +1,23 @@
+@startuml   
+
+start
+:User logs in;
+:User submits product details;
+:Product status set to "Pending";
+
+if (Admin reviews product?) then (Yes)
+    :Admin approves/rejects product;
+    if (Product approved?) then (Yes)
+        :Set product status to "Approved";
+        :Product appears in listings;
+    else (No)
+        :Set product status to "Rejected";
+        :Notify user of rejection;
+    endif
+else (No)
+    :Product remains pending;
+endif
+
+stop
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml   
+
+actor User
+actor Admin
+boundary System
+
+== User Registration and Login ==
+User -> System: Register/Login
+System -> System: Verify email and password
+System --> User: Success/Failure response
+
+== Product Submission ==
+User -> System: Submit product details
+System --> Admin: Notify product submission
+Admin -> System: Review product details
+Admin -> System: Approve or Reject product
+System --> User: Product approved/rejected
+
+== Product Browsing and Filtering ==
+User -> System: Search/Filter products
+System --> User: Display search results
+
+== Messaging System ==
+User -> System: Send message to Seller
+System --> Admin: Log message in platform
+System --> User: Deliver message to Seller
+
+@enduml

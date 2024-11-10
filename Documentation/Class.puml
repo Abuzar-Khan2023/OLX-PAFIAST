@@ -1,0 +1,44 @@
+@startuml  
+
+class User {
+    -user_id: INT
+    -email: VARCHAR
+    -password: VARCHAR
+    +register()
+    +login()
+    +submitProduct()
+}
+
+class Admin {
+    -admin_id: INT
+    -email: VARCHAR
+    -password: VARCHAR
+    +approveProduct()
+    +rejectProduct()
+}
+
+class Product {
+    -product_id: INT
+    -name: VARCHAR
+    -description: TEXT
+    -price: DECIMAL
+    -status: ENUM (Pending, Approved, Rejected)
+    -image_url: VARCHAR
+    +submitForApproval()
+}
+
+class Message {
+    -message_id: INT
+    -sender_id: INT
+    -receiver_id: INT
+    -content: TEXT
+    -timestamp: DATETIME
+    +sendMessage()
+}
+
+User "1" -- "0..*" Product : submits
+Admin "1" -- "0..*" Product : verifies
+User "1" -- "0..*" Message : sends
+User "1" -- "0..*" Message : receives
+
+@enduml

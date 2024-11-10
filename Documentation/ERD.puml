@@ -1,0 +1,37 @@
+@startuml   
+
+entity "User" {
+    +user_id: INT (PK)
+    +email: VARCHAR
+    +password: VARCHAR
+}
+
+entity "Product" {
+    +product_id: INT (PK)
+    +name: VARCHAR
+    +description: TEXT
+    +price: DECIMAL
+    +status: ENUM (Pending, Approved, Rejected)
+    +image_url: VARCHAR
+}
+
+entity "Admin" {
+    +admin_id: INT (PK)
+    +email: VARCHAR
+    +password: VARCHAR
+}
+
+entity "Message" {
+    +message_id: INT (PK)
+    +sender_id: INT (FK)
+    +receiver_id: INT (FK)
+    +content: TEXT
+    +timestamp: DATETIME
+}
+
+User ||--o{ Product : "submits"
+Product ||--o{ Message : "relates to"
+User ||--o{ Message : "communicates with"
+Admin ||--o{ Product : "verifies"
+
+@enduml
