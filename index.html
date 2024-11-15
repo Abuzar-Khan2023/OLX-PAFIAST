@@ -14,7 +14,6 @@
 
     <Header>
         <div class="nav-bar">
-
             <a href=""><h1 class="logo">OLX PAF-IAST</h1></a>
             <ul class="nav-links">
                 <li><a href="">Shop</a></li>
@@ -23,25 +22,31 @@
                 <li><a href="">My profile</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-    
+
             <button>Basket</button>
+        
+            <div class="toggle-icon">
+                <span class="open-icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </div>
         </div>
+        
 
         <div class="nav2">
             <div class="produce">
                 Produce
             </div>
             <div class="withProduce">
-                <p class="fresh">Fresh  —</p>
+                <p class="fresh">Fresh —</p>
                 <p class="date">&nbsp; &nbsp; August 15, 2024</p>
             </div>
- 
+        
             <div class="btns">
-                <div class="btn1">Default</div>
-                <div class="btn2">A - Z</div>
-                <div class="btn3">List view</div>
+                <div class="btn btn1">Default</div>
+                <div class="btn btn2">A - Z</div>
+                <div class="btn btn3">List view</div>
             </div>
-        </div>
+        </div>        
 
         <hr class="line">
     </Header>
@@ -56,8 +61,8 @@
     <div class="default-products">
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/mouse-ph-pod.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/mouse-ph-pod.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Set</P>
@@ -70,8 +75,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/mouse.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/mouse.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Mouse</P>
@@ -84,8 +89,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/wireless-keyboard.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/wireless-keyboard.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Keyboard</P>
@@ -98,8 +103,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/earpod.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/earpod.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Earpod</P>
@@ -112,8 +117,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/iphone.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/iphone.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">IPhone 12</P>
@@ -126,8 +131,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/Samsung\ mob.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/Samsung\ mob.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Samsung Mobile</P>
@@ -140,8 +145,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/headphones.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/headphones.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">HeadPhones</P>
@@ -154,8 +159,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/Hands\ free.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/Hands\ free.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Hands Free</P>
@@ -168,8 +173,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/Laptop.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/Laptop.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Laptop</P>
@@ -182,8 +187,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/PC.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/PC.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">PC</P>
@@ -196,8 +201,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/apple-mouse-keyboard.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/apple-mouse-keyboard.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Apple M, K</P>
@@ -210,8 +215,8 @@
 
         <div class="box">
             
-            <div class="product" style="background-image: url('/img/mobile-charger.jpg');">
-            </div>
+            <!-- <div class="product" style="background-image: url('/img/mobile-charger.jpg');">
+            </div> -->
 
             <div class="detail">
                 <P class="name">Mobile Charger</P>
@@ -296,6 +301,20 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const toggleIcon = document.querySelector('.toggle-icon');
+        const navBar = document.querySelector('.nav-bar');
+        const openIcon = document.querySelector('.open-icon');
+        const closeIcon = document.querySelector('.close-icon');
+
+        toggleIcon.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+            openIcon.style.display = openIcon.style.display === 'none' ? 'inline' : 'none';
+            closeIcon.style.display = closeIcon.style.display === 'none' ? 'inline' : 'none';
+        });
+
+    </script>
 
 </body>
 </html>
