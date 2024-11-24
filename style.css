@@ -5,10 +5,13 @@
 }
 
 body {
-    background-image: url(/img/bg-img2.jpg);
+    /* background-image: url(/img/bg-img2.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    background-color: #ddd4d4;
 }
 
 a {
@@ -60,15 +63,14 @@ button {
     color: #FFFFFF;
     width: 90px;
     height: 40px;
-    border: 1px solid #426B1F;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #FFFFFF;
-    color: #426B1F;
+    background-color: #edf4e8;
+    color: green;
 }
 
 .toggle-icon {
@@ -176,7 +178,6 @@ button:hover {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn1 {
@@ -336,6 +337,7 @@ button:hover {
     display: block; /* Center the button */
 }
 
+/* Contact Section */
 .contactUs {
     font-size: 3rem;
     font-weight: 300;
@@ -346,50 +348,103 @@ button:hover {
 }
 
 .contact {
-    margin: 50px auto; /* Center the contact section */
+    margin: 50px auto;
     display: flex;
-    justify-content: center;
-    height: 400px;
-    width: 80%; /* Use a percentage to make the contact section responsive */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
     background-color: #FAFAF5;
     border-radius: 10px;
-    box-shadow: #752d2d 0 2px 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
 }
 
 .info {
-    position: relative;
-    top: 150px;
-    right: 150px;
+    flex: 1;
     margin: 20px;
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
-    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 .contactForm {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 30px;
     align-items: center;
+    gap: 20px;
+    padding: 10px;
 }
 
-.yourName, .email, .message {
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
+.yourName,
+.email,
+.message {
+    width: 100%;
+    max-width: 350px;
+    height: 50px;
+    border-radius: 8px;
     border: 1px solid #426B1F;
-    padding-left: 10px;
+    padding-left: 15px;
+    font-size: 1rem;
 }
 
 .btnToContact {
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #426B1F;
+    width: 180px;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
     background-color: #426B1F;
     color: #FFFFFF;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnToContact:hover {
+    background-color: #edf4e8;
+    color: green;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .info,
+    .contactForm {
+        margin: 10px 0;
+    }
+
+    .info {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .yourName,
+    .email,
+    .message {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    .btnToContact {
+        width: 150px;
+        height: 45px;
+    }
+
+    .info {
+        font-size: 1rem;
+    }
 }
 
 footer {
