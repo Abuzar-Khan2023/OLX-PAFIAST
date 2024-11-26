@@ -12,6 +12,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
     overflow-x: hidden;
     background-color: #ddd4d4;
+    border: solid 2px #192a2a;
+    border-radius: 10px;
 }
 
 a {
@@ -286,6 +288,8 @@ button:hover {
     padding: 10px;
     text-align: center;
     border: 0.3px solid #cfa9a9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .name {
@@ -453,7 +457,7 @@ footer {
 
 .foot-pannel2 {
     background-color: #355619;
-    color: #000000;
+    color: #ab9494;
     height: 250px;
     display: flex;
     justify-content: space-evenly;
@@ -461,7 +465,7 @@ footer {
 
 .foot-pannel2 p {
     text-decoration: underline;
-    color: #000000;
+    color: #370909;
     font-size: 1.2rem;
     font-weight: 550;
 }
@@ -478,7 +482,7 @@ ul a {
     display: block;
     font-size: 0.85rem;
     margin-top: 10px;
-    color: #0f1d1d;
+    color: #ddd4d4;
 }
 
 .foot-pannel4 {
