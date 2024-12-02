@@ -12,7 +12,11 @@
 </head>
 <body>
 
-    <Header>
+    <?php include 'navbar.php'; ?>
+
+    <div id="navbar"></div>
+
+    <!-- <Header>
         <div class="nav-bar">
             <a href=""><h1 class="logo">OLX PAF-IAST</h1></a>
             <ul class="nav-links">
@@ -49,7 +53,7 @@
         </div>        
 
         <hr class="line">
-    </Header>
+    </Header> -->
 
     <div class="hero">
         <!-- <div class="hero-text">
@@ -254,7 +258,21 @@
         </div>
     </div>
 
-    <footer>
+    <script>
+        fetch('/more/HTML/navbar.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+
+        fetch('/more/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+    <?php include 'footer.php'; ?>
+
+    <div id="footer"></div>
+
+    <!-- <footer>
         <div class="foot-pannel2">
             <ul>
                 <p>About Us</p>
@@ -300,21 +318,7 @@
                 © ALL RIGHT RESERVED 2024, Designed & Developed by Abuzar Khan
             </div>
         </div>
-    </footer>
-
-    <script>
-        const toggleIcon = document.querySelector('.toggle-icon');
-        const navBar = document.querySelector('.nav-bar');
-        const openIcon = document.querySelector('.open-icon');
-        const closeIcon = document.querySelector('.close-icon');
-
-        toggleIcon.addEventListener('click', () => {
-            navBar.classList.toggle('active');
-            openIcon.style.display = openIcon.style.display === 'none' ? 'inline' : 'none';
-            closeIcon.style.display = closeIcon.style.display === 'none' ? 'inline' : 'none';
-        });
-
-    </script>
+    </footer> -->
 
 </body>
 </html>
