@@ -1,0 +1,31 @@
+@startuml   
+component "Frontend" {
+    [UI] 
+    [Messaging System]
+}
+
+component "Backend" {
+    [Authentication Module]
+    [Product Management Module]
+    [Search & Filter Module]
+}
+
+database "Database" {
+    [User Data]
+    [Product Data]
+    [Messages]
+}
+
+component "Admin Panel" 
+
+[UI] --> [Authentication Module]
+[UI] --> [Product Management Module]
+[UI] --> [Search & Filter Module]
+[Messaging System] --> [Messages]
+
+[Authentication Module] --> [User Data]
+[Product Management Module] --> [Product Data]
+[Search & Filter Module] --> [Product Data]
+[Admin Panel] --> [Product Management Module]
+
+@enduml

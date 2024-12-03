@@ -1,26 +1,37 @@
 @startuml   
-
 left to right direction
-actor "User" as U
-actor "Admin" as A
 
-usecase "Register & Login" as UC1
-usecase "Submit Product Details" as UC2
-usecase "Search & Filter Products" as UC3
-usecase "Communicate with Sellers" as UC4
-usecase "Verify and Post Products" as UC5
-usecase "Manage Listings" as UC6
+actor "Buyer" as Buyer
+actor "Seller" as Seller
+actor "Admin" as Admin
 
-U --> UC1
-U --> UC2
-U --> UC3
-U --> UC4
+rectangle "OLX-Pak-Austria System" {
+    rectangle "Frontend" as Frontend {
+        usecase "Browse Products" as BrowseProducts
+        usecase "Submit Product Details" as SubmitProducts
+        usecase "Manage Listings" as ManageListings
+    }
+    
+    rectangle "Backend" as Backend {
+        usecase "Authenticate Users" as Authenticate
+        usecase "Process Listings" as ProcessListings
+        usecase "Handle Messaging" as HandleMessaging
+        usecase "Search and Filter" as SearchFilter
+    }
+    
+    database "Database" as DB
+}
 
-A --> UC5
-A --> UC6
+Buyer --> BrowseProducts
+Seller --> SubmitProducts
+Admin --> ManageListings
 
-UC2 --> UC5 : "Submit Product"
-UC5 --> UC6 : "Verify & Post"
-UC4 --> UC6 : "View Listings"
+BrowseProducts --> SearchFilter
+SubmitProducts --> ProcessListings
+ManageListings --> ProcessListings
 
+Authenticate --> DB
+ProcessListings --> DB
+SearchFilter --> DB
+HandleMessaging --> DB
 @enduml
