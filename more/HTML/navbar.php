@@ -8,9 +8,11 @@
             <li><a href="">Who we are</a></li> 
             <li><a href="">My profile</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="/more/PHP/login.html">Login</a></li>
+            <li><a href="/more/PHP/signup.html">Signup</a></li>
         </ul>
 
-        <button>
+        <button class="cart-btn">
             <i class="fa fa-shopping-basket"></i>
             <a href="/more/HTML/cart.html" style="text-decoration: none; color: black;">
                 Basket
