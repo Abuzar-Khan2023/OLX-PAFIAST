@@ -232,7 +232,7 @@
         </div>
     </div>
 
-    <div class="about">
+    <div id="about" class="about">
         <p class="aboutText">We’re a community of students, creators, and tech enthusiasts. At OLX PAF-IAST, we’re all about to Connect students to buy, sell, and share gadgets right here at OLF PAF-IAST!</p>
 
         <button class="btnToShop">Browse our Shop</button>
@@ -259,11 +259,11 @@
     </div>
 
     <script>
-        fetch('/more/HTML/navbar.php')
+        fetch('/src/HTML/navbar.php')
             .then(response => response.text())
             .then(data => document.getElementById('navbar').innerHTML = data);
 
-        fetch('/more/HTML/footer.php')
+        fetch('/src/HTML/footer.php')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

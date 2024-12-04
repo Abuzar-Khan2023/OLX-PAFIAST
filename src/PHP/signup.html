@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX PAF-IAST | Register yourself</title>
+    <link rel="stylesheet" href="/src/CSS/signup.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <?php include 'navbar.php'; ?>
+
+    <div id="navbar"></div>
+
+    <div class="signup">
+        <h1>Signup</h1>
+    
+        <form id="signupForm" action="" method="post">
+            <label for="name">Full Name: </label>
+            <input type="text" name="name" placeholder="Name" required>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" placeholder="Email" required>
+
+            <label for="phone">Phone Number: </label>
+            <input type="text" name="phone" placeholder="Phone Number / wtsp" required>
+
+            <div class="choose">
+                <label for="text" name="gender" style="color: black; font-weight: bold;">Gender: </label>
+                <label for="male">Male</label><input type="radio" name="gender" value="male">
+                <label for="female">Female</label><input type="radio" name="gender" value="female"></label>
+            </div>
+
+            <div class="choose">
+                <label for="text" name="role" style="color: black; font-weight: bold;">Role: </label>
+                <label for="buyer">Buyer</label>
+                <input type="radio" name="role" value="buyer">
+                <label for="seller">Seller</label>
+                <input type="radio" name="role" value="seller"></label>
+            </div>
+
+            <div class="choose">
+                <label for="text" name="stdFaculty" style="color: black; font-weight: bold;">Student / Faculty: </label>
+                <label for="student">Student</label>
+                <input type="radio" name="stdFaculty" value="student">
+                <label for="faculty">Faculty</label>
+                <input type="radio" name="stdFaculty" value="faculty"></label>
+            </div>
+
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <label for="confirmPassword">Confirm Password: </label>
+            <input type="password" name="confirmPassword" placeholder="Password" required>
+
+            <button value="Signup" name="signup">Signup</button>
+        </form>
+        
+        <a class="loginLink" href="/src/PHP/login.html">Already have an account? Login</a>
+    </div>
+
+
+    <script>
+        fetch('/src/HTML/navbar.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+
+        fetch('/src/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+    <?php include 'footer.php'; ?>
+
+    <div id="footer"></div>
+    
+</body>
+</html>

@@ -13,7 +13,7 @@ body {
 
 .signup {
     max-width: 600px;
-    height: 700px;
+    height: 1550px;
     margin: 5% auto 0 auto;
     display: flex;
     flex-direction: column;
@@ -47,6 +47,17 @@ body {
     margin: 10px 0 20px 0;
 }
 
+.choose {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 20px 0;
+    border: solid 1px #426B1F;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
 
 #signupForm a:active {
     transform: translateY(2px);
