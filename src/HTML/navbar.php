@@ -33,36 +33,43 @@
 
     
         <div class="nav2">
-            <div class="produce">Produce</div>
-
-                <div class="toggle-icon" onclick="toggleMenu()">
-                    <span class="open-icon">&#9776;</span>
-                    <span class="close-icon">&times;</span>
-                </div>
+            <div class="produces">
+                <div class="produce">Sell?</div>
+                <div class="produce">Buy?</div>
+            </div>
 
             <div class="withProduce">
                 <p class="fresh">Fresh —</p>
                 <p class="date">&nbsp; &nbsp; August 15, 2024</p>
             </div>
-    
+
             <div class="btns">
                 <div class="btn btn1">Default</div>
                 <div class="btn btn2">A - Z</div>
                 <div class="btn btn3">List view</div>
             </div>
+
+            <button class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>        
     
         <hr class="line">
     </header>
 
     <script>
-        function toggleMenu() {
-        const navbar = document.querySelector('.nav2');
-        navbar.classList.toggle('active');
+        document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-        const toggleIcon = document.querySelector('.toggle-icon');
-        toggleIcon.classList.toggle('active');
+    if (toggleButton && navLinks) { // Ensure elements exist
+        toggleButton.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    } else {
+        console.error("Toggle button or nav-links not found.");
     }
+});
     </script>
     
 </body>

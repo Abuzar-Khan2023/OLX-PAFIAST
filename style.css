@@ -96,9 +96,6 @@ a {
 }
 
 @media (max-width: 1050px) {
-    .toggle-icon {
-        display: block;
-    }
 
     .nav-links {
         display: none;
@@ -168,7 +165,13 @@ a {
     margin: 20px auto;
     max-width: 1200px;
     width: 90%;
-    position: relative; /* Helps with better alignment of toggle button */
+    position: relative;
+}
+
+.produces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .produce {
@@ -176,31 +179,23 @@ a {
     font-weight: bold;
     color: #426B1F;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-}
-
-/* Menu Toggle Button */
-.toggle-icon {
-    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: #192a2a solid 2px;
+    border-radius: 10px;
     cursor: pointer;
-    color: #426B1F;
-    margin-left: 15px;
-    display: none; /* Hidden by default for larger screens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    background-color: #192a2a;
+    color: #ddd4d4;
 }
 
-.toggle-icon .open-icon,
-.toggle-icon .close-icon {
-    display: none;
+.produce:hover {
+    color: #ddd4d4;
+    background-color: #171e10;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.nav2.active .toggle-icon .close-icon {
-    display: inline-block;
-}
-
-.nav2.active .toggle-icon .open-icon {
-    display: none;
-}
-
-/* With Produce Section */
 .withProduce {
     display: flex;
     align-items: center;
@@ -255,7 +250,49 @@ a {
     color: #FFFFFF;
 }
 
-/* Responsive Design */
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #6b3e3e;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 200px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+    }
+}
+
 @media (max-width: 768px) {
     .nav2 {
         flex-direction: column;
@@ -267,11 +304,6 @@ a {
     .produce {
         font-size: 2rem;
         margin-bottom: 10px;
-    }
-
-    .toggle-icon {
-        display: inline-block;
-        align-self: flex-start;
     }
 
     .withProduce {
