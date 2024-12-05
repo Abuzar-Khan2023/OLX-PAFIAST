@@ -16,7 +16,6 @@ a {
     text-decoration: none;
 }
 
-/* Base Navbar Styles */
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -341,7 +340,7 @@ a {
 
 .hero {
     display: flex;
-    background-image: url('/image/hm2.jpg');
+    background-image: url('/image/hero');
     background-size: cover;
     background-position: center;
     height: 500px;

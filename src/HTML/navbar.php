@@ -71,6 +71,8 @@
     }
 });
     </script>
+
+    <script src="/src/JavaScript/nav.js"></script>
     
 </body>
 </html>
