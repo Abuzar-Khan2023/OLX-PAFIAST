@@ -8,15 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>OLX PAF-IAST</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo"><h1>OLX PAF-IAST</h1></a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Shop</a></li>
+                <li><a href="">Newstand</a></li>
+                <li><a href="/index.html#about">Who we are</a></li>
+                <li><a href="/src/HTML/profile.html">My profile</a></li>
+                <li><a href="/index.html#contact">Contact</a></li>
+                <li><a href="/src/PHP/login.html">Login</a></li>
+                <li><a href="/src/PHP/signup.html">Signup</a></li>
+            </ul>
 
-    <div class="src" src="./"></div>
+            <button class="cart-btn">
+                <i class="fa fa-shopping-basket"></i>
+                <a href="/src/HTML/cart.html" style="text-decoration: none; color: black;">Basket</a>
+            </button>
 
-    <?php include 'navbar.php'; ?>
+            <button class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
 
-    <div id="navbar"></div>
+        <div class="nav2">
+            <div class="produces">
+                <div class="produce">Sell?</div>
+                <div class="produce">Buy?</div>
+            </div>
+
+            <div class="withProduce">
+                <p class="fresh">Fresh —</p>
+                <p class="date">&nbsp; &nbsp; August 15, 2024</p>
+            </div>
+
+            <div class="btns">
+                <div class="btn btn1">Default</div>
+                <div class="btn btn2">A - Z</div>
+                <div class="btn btn3">List view</div>
+            </div>
+        </div>        
+
+        <hr class="line">
+    </header>
 
     <div class="hero"></div>
 
@@ -215,23 +252,17 @@
         </div>
     </div>
 
-    <script>
-        fetch('/src/HTML/navbar.php')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar').innerHTML = data);
-
-        fetch('/src/HTML/footer.php')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer').innerHTML = data);
-
-        
-    </script>
-
-    <script src="/src/JavaScript/nav.js"></script>
-
     <?php include 'footer.php'; ?>
 
     <div id="footer"></div>
+
+    <script>
+        fetch('/src/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+    <script src="/src/JavaScript/nav.js"></script>
 
 </body>
 </html>
