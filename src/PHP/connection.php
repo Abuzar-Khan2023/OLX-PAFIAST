@@ -1,14 +1,12 @@
-<!-- This is just for connecting to the database -->
 <?php
-$server = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
-$database = "olx";
+$dbname = "olx";
 
-$conn = new mysqli($server, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-echo "Connected Successfully by Abuzar Khan";
-
-if ($conn->connect_error) { 
+if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+?>
