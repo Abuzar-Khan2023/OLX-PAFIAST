@@ -1,10 +1,10 @@
 // Sample product data
 const products = [
-    { id: 1, name: "Set", price: 99, image: "/image/mouse-ph-pod.jp" },
-    { id: 2, name: "Mouse", price: 4.5, image: "/image/mouse.jpg" },
-    { id: 3, name: "Keyboard", price: 24, image: "/image/wireless-keyboard.jpg" },
-    { id: 4, name: "Earpod", price: 19, image: "/image/earpod.jpg" },
-    { id: 5, name: "IPhone 12", price: 395, image: "/image/iphone.jpg" },
+    { id: 1, name: "Set", price: 99, image: "/olx-pafiast/image/mouse-ph-pod.jp" },
+    { id: 2, name: "Mouse", price: 4.5, image: "/olx-pafiast/image/mouse.jpg" },
+    { id: 3, name: "Keyboard", price: 24, image: "/olx-pafiast/image/wireless-keyboard.jpg" },
+    { id: 4, name: "Earpod", price: 19, image: "/olx-pafiast/image/earpod.jpg" },
+    { id: 5, name: "IPhone 12", price: 395, image: "/olx-pafiast/image/iphone.jpg" },
     // Add the remaining products similarly
 ];
 
@@ -42,7 +42,7 @@ function addToCart(productId) {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "/HTML/cart.html";
+    window.location.href = "/olx-pafiast/src/HTML/cart.html";
 }
 
 // Function to render cart items
@@ -89,7 +89,7 @@ function removeFromCart(productId) {
 function updateQuantity(productId, change) {
     const item = cart.find((item) => item.id === productId);
     if (item) {
-        item.quantity = Math.max(1, item.quantity + change); // Minimum quantity is 1
+        item.quantity = Math.max(1, item.quantity + change);
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();

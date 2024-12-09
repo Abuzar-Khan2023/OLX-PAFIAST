@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include 'db.php'; // Database connection
+include 'connection.php';
 
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
@@ -23,7 +23,7 @@ $products = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | OLX PAF-IAST</title>
-    <link rel="stylesheet" href="/src/CSS/dashboard.css">
+    <link rel="stylesheet" href="/olx-pafiast/src/CSS/dashboard.css">
 </head>
 <body>
 <header>
@@ -69,6 +69,6 @@ $products = $stmt->get_result();
     </section>
 </main>
 
-<script src="/src/JavaScript/dashboard.js"></script>
+<script src="/olx-pafiast/src/JavaScript/dashboard.js"></script>
 </body>
 </html>
