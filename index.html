@@ -18,16 +18,21 @@
                 <li><a href="/olx-pafiast/index.html">Shop</a></li>
                 <li><a href="">Newstand</a></li>
                 <li><a href="/olx-pafiast/index.html#about">Who we are</a></li>
-                <li><a href="/olx-pafiast/src/HTML/dashboard.html">My profile</a></li>
+                <li><a href="/olx-pafiast/src/PHP/dashboard.php">My profile</a></li>
                 <li><a href="/olx-pafiast/index.html#contact">Contact</a></li>
                 <li><a href="/olx-pafiast/src/PHP/login.html">Login</a></li>
                 <li><a href="/olx-pafiast/src/PHP/signup.html">Signup</a></li>
             </ul>
 
-            <button class="cart-btn">
+            <button class="cart-btn" onclick="goToCart()">
                 <i class="fa fa-shopping-basket"></i>
                 <a href="/olx-pafiast/src/HTML/cart.html" style="text-decoration: none; color: black;">Basket</a>
+                <span id="cart-count">0</span>
             </button>
+
+            <!-- <div id="popup-notification" class="hidden">
+                <p>Product added to cart!</p>
+            </div> -->
 
             <button class="menu-toggle">
                 <i class="fa fa-bars"></i>

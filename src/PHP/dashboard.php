@@ -7,16 +7,17 @@ if (!isset($_SESSION['user_id'])) {
 
 include 'connection.php';
 
-$user_id = $_SESSION['user_id'];
-$user_name = $_SESSION['user_name'];
+$user_id = $_SESSION['user_id']; // Get logged-in user's ID
+$user_name = $_SESSION['user_name']; // Logged-in user's name
 
-// Fetch user products
+// Fetch ONLY the logged-in user's products
 $query = "SELECT * FROM products WHERE user_id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param('i', $user_id);
 $stmt->execute();
-$products = $stmt->get_result();
+$result = $stmt->get_result();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@ $products = $stmt->get_result();
 </head>
 <body>
 <header>
-    <h1>Welcome, <?php echo $user_name; ?></h1>
+    <h1>Welcome, <?php echo htmlspecialchars($user_name); ?></h1>
     <a href="profile.php" class="profile-link">Profile</a>
     <a href="logout.php" class="logout-link">Logout</a>
 </header>
@@ -35,10 +36,10 @@ $products = $stmt->get_result();
 <main>
     <section class="product-upload">
         <h2>Upload Product</h2>
-        <form action="upload_product.php" method="POST" enctype="multipart/form-data">
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Product Name" required>
             <textarea name="description" placeholder="Product Description" required></textarea>
-            <input type="number" name="price" placeholder="Price" required>
+            <input type="text" name="price" placeholder="Price" required>
             <input type="file" name="image" accept="image/*" required>
             <button type="submit">Upload</button>
         </form>
@@ -52,15 +53,19 @@ $products = $stmt->get_result();
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Image</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                <?php while ($product = $products->fetch_assoc()): ?>
+                <?php while ($product = $result->fetch_assoc()): ?>
                 <tr>
-                    <td><?php echo $product['name']; ?></td>
-                    <td><?php echo $product['description']; ?></td>
-                    <td><?php echo $product['price']; ?></td>
+                    <td><?php echo htmlspecialchars($product['name']); ?></td>
+                    <td><?php echo htmlspecialchars($product['description']); ?></td>
+                    <td><?php echo htmlspecialchars($product['price']); ?></td>
+                    <td>
+                        <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="Product Image" width="100">
+                    </td>
                     <td><?php echo ucfirst($product['status']); ?></td>
                 </tr>
                 <?php endwhile; ?>

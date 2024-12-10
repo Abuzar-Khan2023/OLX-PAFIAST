@@ -1,11 +1,13 @@
 <?php
 session_start();
-require_once 'connection.php';
+require_once 'connection.php'; // Database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Sanitize input
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    // SQL query to fetch user
     $query = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('s', $email);
@@ -14,16 +16,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
+        // Verify password
         if (password_verify($password, $user['password'])) {
+            // Set session variables
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['role'] = $user['role'];
+            
+            // Redirect to dashboard
             header('Location: dashboard.php');
+            exit();
         } else {
-            echo "Invalid credentials!";
+            echo "<script>alert('Invalid credentials!');</script>";
         }
     } else {
-        echo "User not found!";
+        echo "<script>alert('User not found!');</script>";
     }
 }
 ?>

@@ -15,8 +15,8 @@
             <ul class="nav-links">
                 <li><a href="/olx-pafiast/index.html">Shop</a></li>
                 <li><a href="">Newstand</a></li>
-                <li><a href="/olx-pafiast/src/index.html#about">Who we are</a></li>
-                <li><a href="/olx-pafiast/src/HTML/dashboard.html">My profile</a></li>
+                <li><a href="/olx-pafiast/index.html#about">Who we are</a></li>
+                <li><a href="/olx-pafiast/src/PHP/dashboard.php">My profile</a></li>
                 <li><a href="/olx-pafiast/index.html#contact">Contact</a></li>
                 <li><a href="/olx-pafiast/src/PHP/login.html">Login</a></li>
                 <li><a href="/olx-pafiast/src/PHP/signup.html">Signup</a></li>
@@ -56,15 +56,15 @@
     <div class="login">
         <h1>Login</h1>
     
-        <form id="loginForm" action="" method="post">
-            <label for="email">Email: </label>
-            <input type="text" name="email" placeholder="Email" required>
-    
-            <label for="password">Password: </label>
-            <input type="password" name="password" placeholder="Password" required>
-    
+        <form id="loginForm" action="login.php" method="post">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="Email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+
             <a href="/olx-pafiast/src/PHP/signup.html">Don't have an account? Signup</a>
-            <button value="Login" name="login">Login</button>
+            <button type="submit" name="login">Login</button>
         </form>
         
     </div>
