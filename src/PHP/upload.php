@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $stmt->bind_param('issss', $user_id, $name, $description, $price, $image_path);
     if ($stmt->execute()) {
-        header('Location: dashboard.php'); // Redirect back to dashboard
+        header('Location: user_dashboard.php');
         exit();
     } else {
         echo "Error: " . $stmt->error;

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['role'] = $user['role'];
             
             // Redirect to dashboard
-            header('Location: dashboard.php');
+            header('Location: user_dashboard.php');
             exit();
         } else {
             echo "<script>alert('Invalid credentials!');</script>";

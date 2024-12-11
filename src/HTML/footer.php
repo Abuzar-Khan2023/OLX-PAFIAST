@@ -1,5 +1,3 @@
-<!-- footer.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,40 +11,38 @@
 </head>
 <body>
     <footer>
-        <div class="foot-pannel2">
-            <ul>
-                <p>About Us</p>
-                <a href="#"><i class="fa-solid fa-store"></i> Our Story</a>
-                <a href="#"><i class="fa-solid fa-seedling"></i> Sustainable Farming</a>
-                <a href="#"><i class="fa-solid fa-handshake"></i> Meet the Farmers</a>
-                <a href="#"><i class="fa-solid fa-users"></i> Community Impact</a>
-                <a href="#"><i class="fa-solid fa-bullseye"></i> Our Mission</a>
-            </ul>
-            <ul>
-                <p>Shop</p>
-                <a href="#"><i class="fa-solid fa-carrot"></i> Fresh Vegetables</a>
-                <a href="#"><i class="fa-solid fa-leaf"></i> Seasonal Produce</a>
-                <a href="#"><i class="fa-solid fa-apple-whole"></i> Organic Products</a>
-                <a href="#"><i class="fa-solid fa-tag"></i> Weekly Specials</a>
-                <a href="#"><i class="fa-solid fa-gift"></i> Gift Baskets</a>
-            </ul>
-            <ul>
-                <p>Customer Service</p>
-                <a href="#"><i class="fa-solid fa-envelope"></i> Contact Us</a>
-                <a href="#"><i class="fa-solid fa-question-circle"></i> FAQs</a>
-                <a href="#"><i class="fa-solid fa-truck"></i> Shipping Information</a>
-                <a href="#"><i class="fa-solid fa-undo"></i> Return Policy</a>
-                <a href="#"><i class="fa-solid fa-map-marker-alt"></i> Track Order</a>
-            </ul>
-            <ul>
-                <p>Stay Connected</p>
-                <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Newsletter</a>
-                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
-                <a href="#"><i class="fa-brands fa-pinterest"></i> Pinterest</a>
-            </ul>
-        </div>   
+    <div class="foot-pannel2">
+        <ul>
+            <p>About Us</p>
+            <a href="#"><i class="fa-solid fa-store"></i> Our Story</a>
+            <a href="#"><i class="fa-solid fa-users"></i> Meet the Team</a>
+            <a href="/olx-pafiast/admin/PHP/admin_dashboard.php"><i class="fa-solid fa-user-shield"></i> Admin</a>
+            <a href="#"><i class="fa-solid fa-bullseye"></i> Our Mission</a>
+            <a href="#"><i class="fa-solid fa-location-dot"></i> Locations</a>
+        </ul>
+        <ul>
+            <p>Categories</p>
+            <a href="#"><i class="fa-solid fa-mobile-screen"></i> Electronics</a>
+            <a href="#"><i class="fa-solid fa-tshirt"></i> Clothing</a>
+            <a href="#"><i class="fa-solid fa-gift"></i> Gifts</a>
+        </ul>
+        <ul>
+            <p>Customer Support</p>
+            <a href="/olx-pafiast/index.html#contact"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+            <a href="#"><i class="fa-solid fa-question-circle"></i> FAQs</a>
+            <a href="#"><i class="fa-solid fa-truck"></i> Shipping Information</a>
+            <a href="#"><i class="fa-solid fa-undo"></i> Return Policy</a>
+            <a href="#"><i class="fa-solid fa-map-marker-alt"></i> Track Order</a>
+        </ul>
+        <ul>
+            <p>Stay Connected</p>
+            <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Newsletter</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </ul>
+    </div>
     
         <div class="foot-pannel4">
             <div class="pages">

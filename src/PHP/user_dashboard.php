@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include 'connection.php';
+include 'connection.php'; 
 
 $user_id = $_SESSION['user_id']; // Get logged-in user's ID
 $user_name = $_SESSION['user_name']; // Logged-in user's name
@@ -61,12 +61,12 @@ $result = $stmt->get_result();
                 <?php while ($product = $result->fetch_assoc()): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($product['name']); ?></td>
-                    <td><?php echo htmlspecialchars($product['description']); ?></td>
-                    <td><?php echo htmlspecialchars($product['price']); ?></td>
-                    <td>
+                        <td><?php echo htmlspecialchars($product['description']); ?></td>
+                        <td><?php echo htmlspecialchars($product['price']); ?></td>
+                        <td>
                         <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="Product Image" width="100">
                     </td>
-                    <td><?php echo ucfirst($product['status']); ?></td>
+                    <td><?php echo ucfirst($product['status']); ?></td> <!-- Display the status -->
                 </tr>
                 <?php endwhile; ?>
             </tbody>
