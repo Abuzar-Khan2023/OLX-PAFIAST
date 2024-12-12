@@ -33,3 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     }
 }
 ?>
+
+    <script>
+        window.onload = function() {
+            document.getElementById("cnic").value = "";
+            document.getElementById("password").value = "";
+        };
+    </script>

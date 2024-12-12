@@ -4,7 +4,6 @@ const products = [
     { id: 2, name: "Mouse", price: 4.5, image: "/olx-pafiast/image/mouse.jpg" },
     { id: 3, name: "Keyboard", price: 24, image: "/olx-pafiast/image/wireless-keyboard.jpg" },
     { id: 4, name: "Earpod", price: 19, image: "/olx-pafiast/image/earpod.jpg" },
-    { id: 5, name: "IPhone 12", price: 395, image: "/olx-pafiast/image/iphone.jpg" },
 ];
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];

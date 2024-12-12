@@ -11,18 +11,24 @@
     <div class="login">
         <h1>Login</h1>
     
-        <form id="loginForm" action="/olx-pafiast/admin/PHP/login.php" method="post">
+        <form id="loginForm" action="/olx-pafiast/admin/PHP/login.php" method="post" autocomplete="off">
             <label for="email">Enter Your CNIC:</label>
-            <input type="number" name="cnic" id="cnic" placeholder="CNIC (without dashes)" required>
+            <input type="number" name="cnic" id="cnic" placeholder="CNIC (without dashes)" value="" required>
 
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" value="" required>
 
             <a href="/olx-pafiast/admin/HTML/signup.html">Don't have an account? Signup</a>
             <button type="submit" name="login">Login</button>
         </form>
-        
     </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById("cnic").value = "";
+            document.getElementById("password").value = "";
+        };
+    </script>
     
 </body>
 </html>
