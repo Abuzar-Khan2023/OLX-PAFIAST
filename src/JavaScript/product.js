@@ -20,7 +20,7 @@ function renderProducts() {
                     <p class="name">${product.name}</p>
                     <p class="price">$${product.price}</p>
                     <div class="addToBasket" onclick="addToCart(${product.id})">
-                        <button>Add to Cart</button>
+                        <div class="AddToCart-btn">Add to Cart</div>
                     </div>
                 </div>
             </div>
@@ -75,27 +75,70 @@ function renderCart() {
     let subtotal = 0;
 
     cartItems.innerHTML = ""; // Clear cart container
+cart.forEach((item) => {
+    subtotal += item.price * item.quantity;
+
+    const cartItemHTML = `
+        <div class="product1" style="margin-bottom: 20px;">
+            <div class="details">
+                <p class="name">${item.name}</p>
+                <p class="price">$${item.price}</p>
+                <p class="quantity">
+                    <i class="fa-solid fa-minus" onclick="decreaseQuantity(${item.id})"></i>
+                    <span class="quantity-value">${item.quantity}</span>
+                    <i class="fa-solid fa-plus" onclick="increaseQuantity(${item.id})"></i>
+                </p>
+            </div>
+            <div class="remove fa-solid fa-xmark" onclick="removeFromCart(${item.id})"></div>
+        </div>
+    `;
+    cartItems.innerHTML += cartItemHTML;
+});
+
+function increaseQuantity(id) {
+    const item = cart.find(product => product.id === id);
+    if (item) {
+        item.quantity++;
+        updateCart();
+    }
+}
+
+function decreaseQuantity(id) {
+    const item = cart.find(product => product.id === id);
+    if (item && item.quantity > 1) {
+        item.quantity--;
+        updateCart();
+    }
+}
+
+function updateCart() {
+    cartItems.innerHTML = "";
+    subtotal = 0;
     cart.forEach((item) => {
         subtotal += item.price * item.quantity;
 
         const cartItemHTML = `
-            <div class="product1">
+            <div class="product1" style="margin-bottom: 20px;">
                 <div class="details">
                     <p class="name">${item.name}</p>
-                    <p class="price" style="color: green;">$${item.price}</p>
-                    <p>Quantity: ${item.quantity}</p>
+                    <p class="price">$${item.price}</p>
+                    <p class="quantity">
+                        <i class="fa-solid fa-minus" onclick="decreaseQuantity(${item.id})"></i>
+                        <span class="quantity-value">${item.quantity}</span>
+                        <i class="fa-solid fa-plus" onclick="increaseQuantity(${item.id})"></i>
+                    </p>
                 </div>
-                <button onclick="removeFromCart(${item.id})">Remove</button>
+                <div class="remove fa-solid fa-xmark" onclick="removeFromCart(${item.id})"></div>
             </div>
         `;
         cartItems.innerHTML += cartItemHTML;
     });
+}
 
     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
     totalElement.textContent = `$${subtotal.toFixed(2)}`;
 }
 
-// Function to remove items from cart
 function removeFromCart(productId) {
     cart = cart.filter((item) => item.id !== productId);
     localStorage.setItem("cart", JSON.stringify(cart));
