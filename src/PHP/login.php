@@ -27,10 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: user_dashboard.php');
             exit();
         } else {
-            echo "<script>alert('Invalid credentials!');</script>";
+            echo "<script>alert('Invalid Credentials'); window.location.href='login.html';</script>";
+
         }
     } else {
-        echo "<script>alert('User not found!');</script>";
+        echo "<script>alert('User does not exist'); window.location.href='signup.html';</script>";
     }
 }
 ?>

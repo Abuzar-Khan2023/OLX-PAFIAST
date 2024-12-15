@@ -21,4 +21,4 @@ if (isset($_GET['id'])) {
         echo "Error: " . $stmt->error;
     }
 }
-?>
+?>P

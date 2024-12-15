@@ -57,9 +57,9 @@
     <div class="signup">
         <h1>Signup</h1>
         
-        <form id="signupForm" action="signup.php" method="post">
+        <form id="signupForm" name="signupForm" action="signup.php" method="post" onsubmit="return validateForm()">
             <label for="name">Full Name: </label>
-            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="name" value="" placeholder="Name" required>
 
             <label for="email">Email: </label>
             <input type="email" name="email" placeholder="Email" required>
@@ -71,14 +71,6 @@
                 <label for="text" name="gender" style="color: black; font-weight: bold;">Gender: </label>
                 <label for="male">Male</label><input type="radio" name="gender" value="male">
                 <label for="female">Female</label><input type="radio" name="gender" value="female"></label>
-            </div>
-
-            <div class="choose">
-                <label for="text" name="role" style="color: black; font-weight: bold;">Role: </label>
-                <label for="buyer">Buyer</label>
-                <input type="radio" name="role" value="buyer">
-                <label for="seller">Seller</label>
-                <input type="radio" name="role" value="seller"></label>
             </div>
 
             <div class="choose">
@@ -109,6 +101,36 @@
         fetch('/olx-pafiast/src/HTML/footer.php')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
+
+      function validate() {
+
+         var name = document.signupForm.name.value;
+         var nameregx = /^[A-Za-z ]{1,20}$/;
+
+         var email = document.signupForm.email.value;
+         var emailregx = /^[A-Za-z]{1}[A-Za-z_0-9.]{1,}@[A-Za-z]{2,12}[.]{1}[A-Za-z.]{2,8}$/;
+
+         var password = document.signupForm.password.value;
+         var passwordregx = /^(?=.*[0-9])(?=.*[\*&%\$!@_])[A-Za-z0-9\*&%$!@_]{8,}$/;
+
+         
+         if (!nameregx.test(name)) {
+             alert("Incorrect name");
+             return false;
+         }
+
+         if (!emailregx.test(email)) {
+             alert("Incorrect Email");
+             return false;
+         }
+
+         if (!passwordregx.test(password)) {
+             alert("Incorrect Password");
+             return false;
+         }
+         
+         return true;
+      }
     </script>
 
     <script src="/olx-pafiast/src/JavaScript/nav.js"></script>

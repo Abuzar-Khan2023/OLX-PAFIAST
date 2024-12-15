@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include 'connection.php'; 
+require_once 'connection.php'; 
 
 $user_id = $_SESSION['user_id']; // Get logged-in user's ID
 $user_name = $_SESSION['user_name']; // Logged-in user's name
@@ -24,7 +24,7 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | OLX PAF-IAST</title>
-    <link rel="stylesheet" href="/olx-pafiast/src/CSS/dashboard.css">
+    <link rel="stylesheet" href="/olx-pafiast/src/CSS/user_dashboard.css">
 </head>
 <body>
 <header>

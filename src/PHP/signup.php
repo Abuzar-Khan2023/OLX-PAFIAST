@@ -14,11 +14,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Password Confirmation Check
     if ($password !== $confirmPassword) {
-        die("Passwords do not match! <a href='signup.html'>Go back</a>");
+        echo "<script>alert('Passwords do not match!'); window.location.href='signup.html';</script>";
+        exit();
     }
 
     // Hash the password securely
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+    // Check if the email already exists
+    $checkEmailQuery = "SELECT id FROM users WHERE email = ?";
+    $checkStmt = $conn->prepare($checkEmailQuery);
+    $checkStmt->bind_param("s", $email);
+    $checkStmt->execute();
+    $checkStmt->store_result();
+
+    if ($checkStmt->num_rows > 0) {
+        echo "<script>alert('Email already exists'); window.location.href='signup.html';</script>";
+        exit();
+    }
+    $checkStmt->close();
 
     // Insert into the database
     $stmt = $conn->prepare("INSERT INTO users (name, email, phone, gender, role, stdFaculty, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -26,13 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Execute the query and check success
     if ($stmt->execute()) {
-        echo "Registration successful! <a href='login.html'>Login here</a>";
+        echo "<script>alert('Registration successful! Please Login'); window.location.href='signup.html';</script>";
     } else {
-        if ($stmt->errno === 1062) { // Handle duplicate email
-            echo "Error: Email already exists. <a href='signup.html'>Try again</a>";
-        } else {
-            echo "Error: " . $stmt->error;
-        }
+        echo "Error: " . $stmt->error;
     }
 
     // Close the connection

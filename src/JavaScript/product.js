@@ -75,15 +75,16 @@ function renderCart() {
     let subtotal = 0;
 
     cartItems.innerHTML = ""; // Clear cart container
-cart.forEach((item) => {
+    cart.forEach((item) => {
     subtotal += item.price * item.quantity;
 
     const cartItemHTML = `
-        <div class="product1" style="margin-bottom: 20px;">
-            <div class="details">
-                <p class="name">${item.name}</p>
-                <p class="price">$${item.price}</p>
-                <p class="quantity">
+    <div class="separator"></div>
+        <div class="product"">
+            <div class="details name price">
+                <p>${item.name}</p>
+                <p>$${item.price}</p>
+                <p class="quantity i input">
                     <i class="fa-solid fa-minus" onclick="decreaseQuantity(${item.id})"></i>
                     <span class="quantity-value">${item.quantity}</span>
                     <i class="fa-solid fa-plus" onclick="increaseQuantity(${item.id})"></i>
@@ -91,25 +92,27 @@ cart.forEach((item) => {
             </div>
             <div class="remove fa-solid fa-xmark" onclick="removeFromCart(${item.id})"></div>
         </div>
+    </div>
     `;
     cartItems.innerHTML += cartItemHTML;
+    
+    function increaseQuantity(id) {
+        const item = cart.find(product => product.id === id);
+        if (item) {
+            item.quantity++;
+            updateCart();
+        }
+    }
+    
+    function decreaseQuantity(id) {
+        const item = cart.find(product => product.id === id);
+        if (item && item.quantity > 1) {
+            item.quantity--;
+            updateCart();
+        }
+    }
 });
 
-function increaseQuantity(id) {
-    const item = cart.find(product => product.id === id);
-    if (item) {
-        item.quantity++;
-        updateCart();
-    }
-}
-
-function decreaseQuantity(id) {
-    const item = cart.find(product => product.id === id);
-    if (item && item.quantity > 1) {
-        item.quantity--;
-        updateCart();
-    }
-}
 
 function updateCart() {
     cartItems.innerHTML = "";

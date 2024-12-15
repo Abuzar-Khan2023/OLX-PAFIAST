@@ -26,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
             header("Location: /olx-pafiast/admin/PHP/admin_dashboard.php");
             exit();
         } else {
-            echo "Incorrect password!";
+            echo "<script>alert('Invalid password'); window.location.href='/olx-pafiast/admin/HTML/login.html';</script>";
         }
     } else {
-        echo "No user found with that CNIC!";
+        echo "<script>alert('User not found with the provided CNIC'); window.location.href='/olx-pafiast/admin/HTML/signup.html';</script>";
     }
 }
 ?>

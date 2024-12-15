@@ -158,7 +158,7 @@ a {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
     padding: 10px 20px;
     border: #192a2a solid 2px;
-    border-radius: 10px;
+    border-radius: 30px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
@@ -171,23 +171,6 @@ a {
     background-color: #171e10;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.withProduce {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-}
-
-.fresh {
-    font-weight: 500;
-    color: #426B1F;
-}
-
-.date {
-    font-weight: 400;
-    color: #555;
 }
 
 /* Buttons */
@@ -615,4 +598,27 @@ ul a {
     .foot-pannel2 {
         height: 850px;
     }
+}
+
+.popup-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-notification.show {
+    opacity: 1;
+}
+
+.notification-message {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
